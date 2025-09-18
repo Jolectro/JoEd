@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flipping Cuboid</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #111;
+      display: flex;
+      justify-content: flex-end; /* right */
+      align-items: flex-start;  /* top */
+      padding: 20px;
+      perspective: 1200px;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .scene {
+      width: 250px;
+      height: 150px;
+      position: relative;
+      perspective: 1200px;
+    }
+
+    .cuboid {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+    }
+
+    .face {
+      position: absolute;
+      border-style: groove;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      box-shadow: inset 0 0 40px rgba(255,255,255,0.2),
+                  0 10px 25px rgba(0,0,0,0.6);
+    }
+
+    /* Faces */
+    .front  { background: rgb(10, 10, 228);    transform: rotateX(0deg) translateZ(75px); }
+    .back   { background: rgb(233, 233, 3);  transform: rotateX(180deg) translateZ(75px); }
+    .top    { background: rgb(4, 190, 4);   transform: rotateX(90deg) translateZ(75px); }
+    .bottom { background: rgb(196, 5, 196);  transform: rotateX(-90deg) translateZ(75px); }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="cuboid" id="cuboid">
+      <div class="face front"  id="timeFace"></div>
+      <div class="face back"   id="dateFace"></div>
+      <div class="face top"    id="titleFace"></div>
+      <div class="face bottom" id="neuroFace">Neurosonic Academy</div>
+    </div>
+  </div>
+
+  <script>
+    const cuboid = document.getElementById('cuboid');
+    const timeFace = document.getElementById('timeFace');
+    const dateFace = document.getElementById('dateFace');
+    const titleFace = document.getElementById('titleFace');
+    const neuroFace = document.getElementById('neuroFace');
+
+    let angle = 0;
+
+    function updateContent() {
+      // Time
+      let now = new Date();
+      timeFace.textContent = now.toLocaleTimeString();
+      // Date
+      dateFace.textContent = now.toDateString();
+      // Title
+      titleFace.textContent = document.title;
+    }
+
+    setInterval(() => {
+      angle += -90; // flip forward vertically
+      cuboid.style.transform = `rotateX(${angle}deg)`;
+      updateContent();
+    }, 5000);
+
+    updateContent();
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry - Neurosonic Academy</title>
+    <link rel="stylesheet" href="..\styles\home.css">
+    <link rel="stylesheet" href="..\styles\subjects.css">
+</head>
+<body class="collapsed chemistry">
+    <nav class="sidebar">
+        <div class="sidebar-logo">🧠</div>
+        <ul>
+            <li><a href="index.html">🏠 <span>Home</span></a></li>
+            <li><a href="maths.html">📐 <span>Maths</span></a></li>
+            <li class="active"><a href="#">⚗️ <span>Chemistry</span></a></li>
+            <li><a href="biology.html">🧬 <span>Biology</span></a></li>
+            <li><a href="facts.html">✨ <span>Facts</span></a></li>
+        </ul>
+        <button id="darkModeToggle" class="btn">🌙 Dark Mode</button>
+            <script src="..\js\ui.js"></script>
+        <div class="sidebar-toggle" onclick="document.body.classList.toggle('collapsed')">⇤</div>
+    </nav>
+    <div class="main-content">
+        <header class="header chemistry">
+            <h1>Chemistry Lessons</h1>
+            <p>Sharpen your logic, problem-solving, and numerical skills.</p>
+        </header>
+        <div class="lesson-search">
+            <input type="text" id="lessonSearch" placeholder="Search lessons...">
+        </div>
+        <section class="lesson-grid">
+            <div class="lesson-card">
+                <h3>Atomic Structure & Periodic Table</h3>
+                <p>Learn how atoms are built and how the periodic table organizes the elements of the universe.</p>
+                <button class="btn learn chemistry" onclick="openLesson('atomic')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('atomic')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Chemical Bonding & Molecular Structure</h3>
+                <p>Explore how atoms bond together and how molecular shapes affect properties and reactions.</p>
+                <button class="btn learn chemistry" onclick="openLesson('bonding')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('bonding')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>States of Matter & Gas Laws</h3>
+                <p>Understand the behavior of solids, liquids, gases, and the laws that govern gas behavior.</p>
+                <button class="btn learn chemistry" onclick="openLesson('states')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('states')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Gas Laws</h3>
+                <p>Learn about the laws that govern gas behavior.</p>
+                <button class="btn learn chemistry" onclick="openLesson('gas')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('gas')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Acids, Bases & pH</h3>
+                <p>Discover the chemistry of acids and bases, pH scales, and how neutralization works.</p>
+                <button class="btn learn chemistry" onclick="openLesson('pH')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('pH')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Stoichiometry & Chemical Calculations</h3>
+                <p>Master the mole concept, chemical equations, and calculations that predict reaction outcomes.</p>
+                <button class="btn learn chemistry" onclick="openLesson('stoichiometry')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('stoichiometry')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Thermodynamics & Energetics</h3>
+                <p>Learn how energy changes drive chemical reactions and control their direction and speed.</p>
+                <button class="btn learn chemistry" onclick="openLesson('thermodynamics')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('thermodynamics')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Reaction Kinetics & Equilibrium</h3>
+                <p>Explore the speed of reactions and how systems reach balance through dynamic processes.</p>
+                <button class="btn learn chemistry" onclick="openLesson('kinetics')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('kinetics')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Organic Chemistry</h3>
+                <p>Enter the world of carbon compounds, functional groups, and the molecules of life.</p>
+                <button class="btn learn chemistry" onclick="openLesson('organic')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('organic')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Electrochemistry</h3>
+                <p>Understand redox reactions, electrolysis, and the chemical science behind batteries.</p>
+                <button class="btn learn chemistry" onclick="openLesson('electrochemistry')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('electrochemistry')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Environmental Chemistry</h3>
+                <p>Study the chemical processes affecting our environment and explore sustainable solutions.</p>
+                <button class="btn learn chemistry" onclick="openLesson('environmental')">Learn More</button>
+                <button class="btn quiz chemistry" onclick="openQuiz('environmental')">Take Quiz</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>© 2025 Neurosonic Academy. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <div id="quizModal" class="quiz-modal">
+        <div class="quiz-content">
+            <span class="close" onclick="closeQuiz()">&times;</span>
+            <h2 id="quizTitle">Quiz</h2>
+            <div class="quiz-progress">
+                <div class="quiz-progress-fill" id="quizProgressFill">
+                    <span id="quizProgressText"></span>
+                </div>
+            </div>
+            <div id="quizQuestions">
+            </div>
+        </div>
+    </div>
+    <div id="lessonModal" class="lesson-modal">
+        <div class="lesson-content">
+            <span class="close" onclick="closeLesson()">&times;</span>
+            <h2 id="lessonTitle">Lesson</h2>
+            <div id="lessonBody"></div>
+            <div class="lesson-nav">
+                <button class="btn" onclick="prevLesson()">⟵ Previous</button>
+                <button class="btn" onclick="nextLesson()">Next ⟶</button>
+            </div>
+        </div>
+    </div>
+    <script src="..\js\chemistry-quiz.js"></script>
+    <script src="..\js\chemistry.js"></script>
+</body>
+</html>

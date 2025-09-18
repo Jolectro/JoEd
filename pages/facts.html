@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unknown Facts - Neurosonic Academy</title>
+    <link rel="stylesheet" href="..\styles\home.css">
+    <link rel="stylesheet" href="..\styles\subjects.css">
+</head>
+<body class="collapsed facts">
+    <nav class="sidebar">
+        <div class="sidebar-logo">🧠</div>
+        <ul>
+            <li><a href="index.html">🏠 <span>Home</span></a></li>
+            <li><a href="maths.html">📐 <span>Maths</span></a></li>
+            <li><a href="chemistry.html">⚗️ <span>Chemistry</span></a></li>
+            <li><a href="biology.html">🧬 <span>Biology</span></a></li>
+            <li class="active"><a href="#">✨ <span>Facts</span></a></li>
+        </ul>
+        <button id="darkModeToggle" class="btn">🌙 Dark Mode</button>
+            <script src="..\js\ui.js"></script>
+        <div class="sidebar-toggle" onclick="document.body.classList.toggle('collapsed')">⇤</div>
+    </nav>
+    <div class="main-content">
+        <header class="header facts">
+            <h1>Unknown Facts</h1>
+            <p>Sharpen your logic, problem-solving, and numerical skills.</p>
+        </header>
+        <div class="lesson-search">
+            <input type="text" id="lessonSearch" placeholder="Search lessons...">
+        </div>
+        <section class="lesson-grid">
+            <div class="lesson-card">
+                <h3>Space</h3>
+                <p>Mind-bending facts about galaxies, black holes, exoplanets, and cosmic mysteries.</p>
+                <button class="btn learn facts" onclick="openLesson('space')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('space')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Inventions</h3>
+                <p>Surprising origins, happy accidents, and game-changing ideas that shaped our world.</p>
+                <button class="btn learn facts" onclick="openLesson('inventions')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('inventions')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Humans</h3>
+                <p>Wild truths about the body, brain, senses, and the quirks that make us unique.</p>
+                <button class="btn learn facts" onclick="openLesson('humans')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('humans')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Animals</h3>
+                <p>Unbelievable behaviors, superpowers, and survival tricks from the animal kingdom.</p>
+                <button class="btn learn facts" onclick="openLesson('animals')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('animals')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Countries</h3>
+                <p>Little-known laws, records, and cultural gems from nations around the globe.</p>
+                <button class="btn learn facts" onclick="openLesson('countries')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('countries')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Wonders of the World</h3>
+                <p>Hidden features, engineering secrets, and legends behind iconic wonders.</p>
+                <button class="btn learn facts" onclick="openLesson('wonders')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('wonders')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Oceans & Seas</h3>
+                <p>Deep-sea mysteries, strange marine life, and record-breaking ocean facts.</p>
+                <button class="btn learn facts" onclick="openLesson('oceans')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('oceans')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Ancient Civilizations</h3>
+                <p>Lost cities, unexplained artifacts, and surprising tech from the ancient world.</p>
+                <button class="btn learn facts" onclick="openLesson('ancient')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('ancient')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Natural Disasters</h3>
+                <p>Rare phenomena, historic catastrophes, and how nature flexes its power.</p>
+                <button class="btn learn facts" onclick="openLesson('natural')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('natural')">Take Quiz</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Famous Landmarks</h3>
+                <p>Hidden rooms, odd measurements, and untold stories of iconic sites.</p>
+                <button class="btn learn facts" onclick="openLesson('landmarks')">Learn More</button>
+                <button class="btn quiz facts" onclick="openQuiz('landmarks')">Take Quiz</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>© 2025 Neurosonic Academy. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <div id="quizModal" class="quiz-modal">
+        <div class="quiz-content">
+            <span class="close" onclick="closeQuiz()">&times;</span>
+            <h2 id="quizTitle">Quiz</h2>
+            <div class="quiz-progress">
+                <div class="quiz-progress-fill" id="quizProgressFill">
+                    <span id="quizProgressText"></span>
+                </div>
+            </div>
+            <div id="quizQuestions">
+            </div>
+        </div>
+    </div>
+    <div id="lessonModal" class="lesson-modal">
+        <div class="lesson-content">
+            <span class="close" onclick="closeLesson()">&times;</span>
+            <h2 id="lessonTitle">Lesson</h2>
+            <div id="lessonBody"></div>
+            <div class="lesson-nav">
+                <button class="btn" onclick="prevLesson()">⟵ Previous</button>
+                <button class="btn" onclick="nextLesson()">Next ⟶</button>
+            </div>
+        </div>
+    </div>
+    <script src="..\js\facts-quiz.js"></script>
+    <script src="..\js\facts.js"></script>
+</body>
+</html>

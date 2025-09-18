@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurosonic Academy</title>
+    <link rel="stylesheet" href="..\styles\home.css" />
+    <link rel="stylesheet" href="..\styles\subjects.css">
+</head>
+<body class="collapsed index">
+    <nav class="sidebar">
+        <div class="sidebar-logo">🧠</div>
+        <ul>
+            <li><a href="#">🏠 <span>Home</span></a></li>
+            <li><a href="maths.html">📐 <span>Maths</span></a></li>
+            <li><a href="chemistry.html">⚗️ <span>Chemistry</span></a></li>
+            <li><a href="biology.html">🧬 <span>Biology</span></a></li>
+            <li><a href="facts.html">✨ <span>Facts</span></a></li>
+        </ul>
+        <button id="darkModeToggle" class="btn">🌙 Dark Mode</button>
+            <script src="..\js\ui.js"></script>
+        <div class="sidebar-toggle" onclick="document.body.classList.toggle('collapsed')">⇤</div>
+    </nav>
+    <div class="main-content">
+        <header class="header">
+            <h1 class="logo">.</h1>
+            <p class="tagline">.</p>
+        </header>
+        <section class="intro">
+            <h2>Welcome to Neurosonic Academy</h2>
+            <p>
+                Empowering learners through interactive lessons in <strong>Mathematics</strong>,
+                <strong>Chemistry</strong>, <strong>Biology</strong>, and <strong>Unknown Facts</strong>.
+                Dive into knowledge designed to expand your mind, challenge your thinking,
+                and inspire your curiosity.
+            </p>
+            <button onclick="document.querySelector('.subject-grid').scrollIntoView({behavior: 'smooth'})">
+                Start Learning
+            </button>
+        </section>
+        <main class="subject-grid">
+            <a href="maths.html" class="subject-card maths">
+                <div class="card-inner">
+                    <div class="card-content">
+                        <h2>Mathematics</h2>
+                        <p>Logic, numbers, and problem-solving mastery.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="chemistry.html" class="subject-card chemistry">
+                <div class="card-inner">
+                    <div class="card-content">
+                        <h2>Chemistry</h2>
+                        <p>Atoms, reactions, and the science of matter.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="biology.html" class="subject-card biology">
+                <div class="card-inner">
+                    <div class="card-content">
+                        <h2>Biology</h2>
+                        <p>The living world, from cells to ecosystems.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="facts.html" class="subject-card facts">
+                <div class="card-inner">
+                    <div class="card-content">
+                        <h2>Unknown Facts</h2>
+                        <p>Mind-bending truths from around the universe.</p>
+                    </div>
+                </div>
+            </a>
+        </main>
+    <footer class="footer">
+        <p>© 2025 Neurosonic Academy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

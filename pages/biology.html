@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology - Neurosonic Academy</title>
+    <link rel="icon" href="..\media\images\biology-bg.jpg" type="image/jpg">
+    <link rel="stylesheet" href="..\styles\home.css">
+    <link rel="stylesheet" href="..\styles\subjects.css">
+</head>
+<body class="collapsed biology">
+    <nav class="sidebar">
+        <div class="sidebar-logo">🧠</div>
+        <ul>
+            <li><a href="index.html">🏠 <span>Home</span></a></li>
+            <li><a href="maths.html">📐 <span>Maths</span></a></li>
+            <li><a href="chemistry.html">⚗️ <span>Chemistry</span></a></li>
+            <li class="active"><a href="#">🧬 <span>Biology</span></a></li>
+            <li><a href="facts.html">✨ <span>Facts</span></a></li>
+        </ul>
+        <button id="darkModeToggle" class="btn">🌙 Dark Mode</button>
+            <script src="..\js\ui.js"></script>
+        <div class="sidebar-toggle" onclick="document.body.classList.toggle('collapsed')">⇤</div>
+    </nav>
+    <div class="main-content">
+        <header class="header biology">
+            <h1>Biology Lessons</h1>
+            <p>Explore the science of life through clear explanations, vivid illustrations, and real-world examples.</p>
+        </header>
+        <div class="lesson-search">
+            <input type="text" id="lessonSearch" placeholder="Search lessons...">
+        </div>
+        <section class="lesson-grid">
+            <div class="lesson-card" data-lesson-id="cells">
+                <h3>Cell Biology</h3>
+                <p>Discover the structure, types, and functions of the basic unit of life, from tiny organelles to complex cell systems.</p>
+                <button class="btn learn biology" onclick="openLesson('cells')">Learn More</button>
+                <button class="btn quiz biology" onclick="openQuiz('cells')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="photosynthesis">
+                <h3>Photosynthesis & Energy Flow</h3>
+                <p>Explore how plants and some microorganisms convert sunlight into chemical energy to power life on Earth.</p>
+                <button class="btn learn biology" onclick="openLesson('photosynthesis')">Learn More</button>
+                <button class="btn quiz biology" onclick="openQuiz('photosynthesis')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="genetics">
+                <h3>Genetics & Inheritance</h3>
+                <p>Understand how traits are passed from one generation to another, from Mendel’s peas to modern DNA science.</p>
+                <button class="btn learn biology" onclick="openLesson('genetics')">Learn More</button>
+                <button class="btn quiz biology" onclick="openQuiz('genetics')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="ecology">
+                <h3>Ecology & Conservation</h3>
+                <p>Discover how organisms interact with each other and their environment, and how to protect our ecosystems.</p>
+                <button class="btn learn biology" onclick="openLesson('ecology')">Learn More</button>
+                <button class="btn quiz biology" onclick="openQuiz('ecology')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="physiology">
+                <h3>Human Physiology</h3>
+                <p>Learn how the human body works, from organ systems to the coordination that keeps us alive and active.</p>
+                <button class="btn learn biology" onclick="openLesson('physiology')">Learn More</button>
+                <button class="btn quiz biology" onclick="openQuiz('physiology')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="microbiology">
+                <h3>Microbiology & Immunology</h3>
+                <p>Explore the unseen world of microbes, the immune system, and how our bodies fight diseases.</p>
+                <button class="btn learn biology" onclick="openLesson('microbiology')">Learn More</button>
+                <button class="btn quiz biology" onclick="openQuiz('microbiology')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="neuroscience">
+                <h3>Neuroscience & Behavior</h3>
+                <p>Uncover the mysteries of the brain, how we think, feel, and respond to the world around us.</p>
+                <button class="btn learn biology" onclick="openLesson('neuroscience')">Learn More</button>
+                <button class="btn quiz biology" onclick="openQuiz('neuroscience')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="disease">
+                <h3>Disease & Epidemiology</h3>
+                <p>Study how diseases spread, how they affect human health, and the science behind controlling outbreaks.</p>
+                <button class="btn learn biology" onclick="openLesson('disease')">Learn More</button>
+                <button class="btn quiz biology" onclick="openQuiz('disease')">Take Quiz</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>© 2025 Neurosonic Academy. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <div id="quizModal" class="quiz-modal">
+        <div class="quiz-content">
+            <span class="close" onclick="closeQuiz()">&times;</span>
+            <h2 id="quizTitle">Quiz</h2>
+            <div class="quiz-progress">
+                <div class="quiz-progress-fill" id="quizProgressFill">
+                    <span id="quizProgressText"></span>
+                </div>
+            </div>
+            <div id="quizQuestions">
+            </div>
+        </div>
+    </div>
+    <div id="lessonModal" class="lesson-modal">
+        <div class="lesson-content">
+            <span class="close" onclick="closeLesson()">&times;</span>
+            <h2 id="lessonTitle">Lesson</h2>
+            <div id="lessonBody"></div>
+            <div class="lesson-nav">
+                <button class="btn" onclick="prevLesson()">⟵ Previous</button>
+                <button class="btn" onclick="nextLesson()">Next ⟶</button>
+            </div>
+        </div>
+    </div>
+    <script src="..\js\biology-quiz.js"></script>
+    <script src="..\js\biology.js"></script>
+</body>
+</html>

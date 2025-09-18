@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths - Neurosonic Academy</title>
+    <link rel="stylesheet" href="..\styles\home.css">
+    <link rel="stylesheet" href="..\styles\subjects.css">
+</head>
+<body class="collapsed maths">
+    <nav class="sidebar">
+        <div class="sidebar-logo">🧠</div>
+        <ul>
+            <li><a href="index.html">🏠 <span>Home</span></a></li>
+            <li class="active"><a href="#">📐 <span>Maths</span></a></li>
+            <li><a href="chemistry.html">⚗️ <span>Chemistry</span></a></li>
+            <li><a href="biology.html">🧬 <span>Biology</span></a></li>
+            <li><a href="facts.html">✨ <span>Facts</span></a></li>
+        </ul>
+        <button id="darkModeToggle" class="btn">🌙 Dark Mode</button>
+            <script src="..\js\ui.js"></script>
+        <div class="sidebar-toggle" onclick="document.body.classList.toggle('collapsed')">⇤</div>
+    </nav>
+    <div class="main-content">
+        <header class="header maths">
+            <h1>Mathematics</h1>
+            <p>Sharpen your logic, problem-solving, and numerical skills.</p>
+        </header>
+        <div class="lesson-search">
+            <input type="text" id="lessonSearch" placeholder="Search lessons...">
+        </div>
+        <section class="lesson-grid">
+            <div class="lesson-card" data-lesson-id="numbers">
+                <h3>Number Systems & Operations</h3>
+                <p>Master integers, fractions, decimals, and the basic laws of arithmetic.</p>
+                <button class="btn learn maths" onclick="openLesson('numbers')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('numbers')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="algebra">
+                <h3>Algebra & Equations</h3>
+                <p>Learn how to simplify expressions, solve equations, and handle inequalities.</p>
+                <button class="btn learn maths" onclick="openLesson('algebra')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('algebra')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="functions">
+                <h3>Functions & Graphs</h3>
+                <p>Understand mathematical relationships and represent them using graphs.</p>
+                <button class="btn learn maths" onclick="openLesson('functions')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('functions')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="geometry">
+                <h3>Geometry & Shapes</h3>
+                <p>Explore angles, polygons, circles, and the properties of shapes.</p>
+                <button class="btn learn maths" onclick="openLesson('geometry')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('geometry')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="trigonometry">
+                <h3>Trigonometry</h3>
+                <p>Learn the trigonometric ratios, identities, and their real-world applications.</p>
+                <button class="btn learn maths" onclick="openLesson('trigonometry')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('trigonometry')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="calculus">
+                <h3>Calculus</h3>
+                <p>Understand differentiation, integration, and their uses in problem-solving.</p>
+                <button class="btn learn maths" onclick="openLesson('calculus')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('calculus')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="probability">
+                <h3>Probability & Statistics</h3>
+                <p>Work with data, find averages, and calculate the likelihood of events.</p>
+                <button class="btn learn maths" onclick="openLesson('probability')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('probability')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="sequences">
+                <h3>Sequences & Series</h3>
+                <p>Study arithmetic and geometric progressions and their sum formulas.</p>
+                <button class="btn learn maths" onclick="openLesson('sequences')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('sequences')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="vector">
+                <h3>Vectors & Coordinate Geometry</h3>
+                <p>Explore vector operations and the geometry of points, lines, and curves.</p>
+                <button class="btn learn maths" onclick="openLesson('vectors')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('vectors')">Take Quiz</button>
+            </div>
+            <div class="lesson-card" data-lesson-id="logic">
+                <h3>Mathematical Reasoning & Logic</h3>
+                <p>Develop problem-solving skills through proofs and logical arguments.</p>
+                <button class="btn learn maths" onclick="openLesson('logic')">Learn More</button>
+                <button class="btn quiz maths" onclick="openQuiz('logic')">Take Quiz</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>© 2025 Neurosonic Academy. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <div id="quizModal" class="quiz-modal">
+        <div class="quiz-content">
+            <span class="close" onclick="closeQuiz()">&times;</span>
+            <h2 id="quizTitle">Quiz</h2>
+            <div class="quiz-progress">
+                <div class="quiz-progress-fill" id="quizProgressFill">
+                    <span id="quizProgressText"></span>
+                </div>
+            </div>
+            <div id="quizQuestions">
+            </div>
+        </div>
+    </div>
+    <div id="lessonModal" class="lesson-modal">
+        <div class="lesson-content">
+            <span class="close" onclick="closeLesson()">&times;</span>
+            <h2 id="lessonTitle">Lesson</h2>
+            <div id="lessonBody"></div>
+            <div class="lesson-nav">
+                <button class="btn" onclick="prevLesson()">⟵ Previous</button>
+                <button class="btn" onclick="nextLesson()">Next ⟶</button>
+            </div>
+        </div>
+    </div>
+    <script src="..\js\maths-quiz.js"></script>
+    <script src="..\js\maths.js"></script>
+</body>
+</html>
